@@ -54,6 +54,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\GnuWin32\win_flex_bison\custom_build_rules\win_flex_bison_custom_build.props" />
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
@@ -139,8 +140,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Flex Include="hello.l" />
+  </ItemGroup>
+  <ItemGroup>
+    <Bison Include="hello.y" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="hello.flex.cpp" />
+    <ClCompile Include="hello.tab.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="hello.tab.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\GnuWin32\win_flex_bison\custom_build_rules\win_flex_bison_custom_build.targets" />
   </ImportGroup>
 </Project>
